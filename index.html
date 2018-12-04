@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Final Project</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+
+    <!-- Default Stylesheets -->
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="index.html"><img src="images/gc-logo.png" alt="logo" height="75" width="85" /></a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <div id="welcome">
+            <div id="background"></div>
+            <div class="bar"></div>
+            <p>Welcome to <br /> General Church!</p>
+            <div class="bar"></div>
+        </div>
+        <div class="slideshow">
+            <div class="pic">
+                <img src="images/landing.png" alt="one"></div>
+            <div class="pic">
+                <img src="images/landing2.jpg" alt="two">
+            </div>
+            <div class="pic">
+                <img src="images/landing3.jpg" alt="three">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Come Check Us Out!</p>
+        <p>1234 Test Street</p>
+    </footer>
+
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+
+    <script>
+        $("nav ul").animate({
+            'margin-left': '0px',
+            opacity: 1
+        }, "slow");
+        $('.slideshow').slick({
+            infinite: true,
+            speed: 750,
+            autoplaySpeed: 4000,
+            fade: true,
+            cssEase: 'linear',
+            autoplay: true
+        });
+
+    </script>
+
+</body>
+
+</html>

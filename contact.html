@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Final Project</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+
+    <!-- Default Stylesheets -->
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="index.html"><img src="images/gc-logo.png" alt="logo" height="75" width="85" /></a></li>
+            <li><a href="stories.html">Stories</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="main2">
+        <form onsubmit="return check()">
+            <p class="invisible error" id="fnameerror">Please input your first name</p>
+            <label for="fname">First Name:</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name...">
+
+            <p class="invisible error" id="lnameerror">Please input your last name</p>
+            <label for="lname">Last Name:</label>
+            <input type="text" id="lname" name="lastname" placeholder="Your last name...">
+
+
+            <p class="invisible error" id="reasonerror">Please select a reason</p>
+            <label for="reason">Reason:</label><br />
+            <input type="radio" name="reason" value="prayer"> Prayer
+            <input type="radio" name="reason" value="connect"> Connect
+            <input type="radio" name="reason" value="meet"> Meet
+            <input type="radio" name="reason" value="membership"> Membership<br />
+
+            <p class="invisible error" id="messageerror">Please don't leave your message blank</p>
+            <label for="subject">Message</label>
+            <textarea id="message" name="message" placeholder="Write something.." style="height:200px"></textarea>
+
+
+            <input type="submit" value="Submit">
+
+            <p class="invisible success" id="successmessage">Your message submitted successfully!</p>
+        </form>
+    </div>
+
+    <footer>
+        <p>Come Check Us Out!</p>
+        <p>1234 Test Street</p>
+    </footer>
+
+    <script>
+        $("nav ul").animate({
+            'margin-left': '0px',
+            opacity: 1
+        }, "slow");
+
+        function check() {
+            var fname = $('#fname');
+            var lname = $('#lname');
+            var message = $('#message');
+            var success = $('#successmessage');
+            var successful = true;
+            console.log(fname.val());
+            if (fname.val().length == 0) {
+                $('#fnameerror').removeClass('invisible');
+                successful = false;
+            } else {
+                $('#fnameerror').addClass('invisible');
+            }
+            if (lname.val().length == 0) {
+                $('#lnameerror').removeClass('invisible');
+                successful = false;
+            } else {
+                $('#lnameerror').addClass('invisible');
+            }
+            if (!$("input[name='reason']:checked").val()) {
+                $('#reasonerror').removeClass('invisible');
+                successful = false;
+            } else {
+                $('#reasonerror').addClass('invisible');
+            }
+            if (message.val().length == 0) {
+                $('#messageerror').removeClass('invisible');
+                successful = false;
+            } else {
+                $('#messageerror').addClass('invisible');
+            }
+            if (successful) {
+                success.removeClass('invisible');
+            }
+
+
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>
